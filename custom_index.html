@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <link rel="icon" href="favicon.png"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no" />
+
+        <style>
+            #window1 { margin: 0em auto 0 auto; padding: 0; }
+            p { color: #ffffff; width: 50%; margin: 0em auto 0 auto; text-align: center; font-family: sans-serif; }
+            a, a:hover, a:active, a:visited { color: #ffffff; }
+        </style>
+
+        {{#each project.app.web.libs~}}
+            <script type="text/javascript" src="{{this}}"></script>
+        {{/each}}
+
+    </head>
+
+    <body style="padding: 0; margin: 0; background-color: #111111;">
+        <script type="text/javascript" src="./{{project.app.name}}{{#if project.app.web.min}}.min{{/if}}.js"></script>
+        <p><a href="http://luxeengine.com/">Luxe</a> implementation of <a href="http://ncase.me/sight-and-light/">Sight &amp; Light</a> by the wonderfully talented <a href="http://ncase.me/">Nicky Case</a></p>
+        <p>Move the mouse to change the lightsource position. Press <kbd>R</kbd> to re-randomize the walls.</p>
+        <p>Beside the concepts behind producing a 2D "shadow mask" like this, the demo source also shows how to implement custom geometry (in this case, using a triangle fan to cut down on the number of vertices pushed to the GPU [which probably isn't a bottleneck here anyway, but hey.])</p>
+    </body>
+
+</html>
