@@ -1,0 +1,5 @@
+{
+    "shaders" : [
+        { "ps_id":"assets/blur_frag.glsl", "vs_id":"assets/blur_vert.glsl" }
+    ]
+}
